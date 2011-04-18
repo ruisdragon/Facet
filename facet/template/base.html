@@ -1,0 +1,32 @@
+<!doctype html>
+<head>
+<title>Welcome | Facet (Ruis' website)</title> 
+<meta charset=utf-8> 
+<link rel=stylesheet type=text/css href="/static/css/style.css"> 
+</head>
+
+<body>
+<div class=wrap>
+<div class=logo><img src="/static/img/logo.png" /></div>
+<p class=nav> 
+    <a href="/">Blog</a>
+	<a href="/NotePad/">NotePad</a>
+    <a href="/About/">About</a></a> 
+  
+  
+    <blockquote>
+    {% block quote %}
+    {% endblock %}
+    </blockquote>
+  
+  <div class=content>
+  {% block content %}
+  {% endblock %}
+  </div>
+  
+  <p class=footer> 
+    &copy; Copyright 2011 by <a href=http://ruisdragon.com/>Ruis</a> //
+    
+    <a href="/login/">sign in</a> 
+</div>
+</body>

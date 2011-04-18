@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block quote %}
+I'm Ruis, and here is my website, I'm now interested in Web App development and Python, more info about me can be found <a href="/About">here</a>.
+{% endblock %}
+
+
+{% block content %}
+{% if latest_entry_list %}
+    {% for entry in latest_entry_list %}
+    <h2>{{entry.title}}</h2>
+    <p>{{entry.content|safe}}</p>
+    {% endfor %}
+{% else %}
+    <p>No entries are available.</p>
+{% endif %}
+{% endblock %}
