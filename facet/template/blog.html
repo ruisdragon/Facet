@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if latest_blog_list %}
+    {% for entry in latest_blog_list %}
+    <h2><a href="/blog/{{entry.id}}">{{entry.title}}</a></h2>
+    <p class="date">Published in {{entry.pub_date}}</p>
+    <p>{{entry.content|safe}}</p>
+    {% endfor %}
+{% else %}
+    <p>No entries are available.</p>
+{% endif %}
+{% endblock %}

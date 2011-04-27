@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 
 {% block quote %}
-I'm Ruis, and here is my website, I'm now interested in Web App development and Python, more info about me can be found <a href="/About">here</a>.
+I'm Ruis, and here is my website, I'm now interested in Web App development and Python, more info about me can be found <a href="/about">here</a>.
 {% endblock %}
 
 
 {% block content %}
 {% if latest_entry_list %}
     {% for entry in latest_entry_list %}
-    <h2>{{entry.title}}</h2>
+    <h2><a href="/blog/{{entry.id}}">{{entry.title}}</a></h2>
+    <p class="date">Published in {{entry.pub_date}}</p>
     <p>{{entry.content|safe}}</p>
     {% endfor %}
 {% else %}

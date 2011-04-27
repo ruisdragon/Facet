@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if entry %}
+    <h2><a href="/blog/{{entry.id}}">{{entry.title}}</a></h2>
+    <p class="date">Published in {{entry.pub_date}}</p>
+    <p>{{entry.content|safe}}</p>
+{% else %}
+    <p>No entries are available.</p>
+{% endif %}
+{% endblock %}

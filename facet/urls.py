@@ -9,9 +9,12 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^$', 'facet.notepad.views.index'),
-    #url(r'^notepad/', include('facet.notepad.urls')),
-    #url(r'^blog/', include('facet.blog.urls')),
+    url(r'^$', 'facet.blog.views.index'),
+    url(r'^notepad/$', 'facet.blog.views.notepad'),
+    url(r'^notepad/(?P<pk_id>\d+)/$', 'facet.blog.views.detail'),
+    url(r'^blog/$', 'facet.blog.views.blog'),
+    url(r'^blog/(?P<pk_id>\d+)/$', 'facet.blog.views.detail'),
+    url(r'^about/$', 'facet.blog.views.about'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
